@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem-vindo ao Project 1</h1>
+  <p class="lead">Esse é um blog simples, desenvolvido com Node.js + Express + MongoDB</p>
+  <hr class="my-4">
+  <p>Aqui você vai poder ler sobre os posts</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Registrar</a>
+  </p>
+</div>
+
+<hr>
+
+<h2>Posts recentes:</h2>
+
+{{#each posts}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href="/posts/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+        <hr>
+        <small>Categoria: {{categoria.nome}}</small><br>
+        <small>Data de publicação: {{data}}</small>
+    </div>
+</div>
+{{else}}
+    <h5>Nenhuma postagem</h5>
+{{/each}}
